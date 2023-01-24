@@ -1,0 +1,554 @@
+<<<<<<< HEAD:HTML y CSS/proyecto 2/Assets/css/style.css
+/* Aplicando Google Font size */
+html{
+    font-family: 'Manrope', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+/* Variables */
+:root{
+--menu-color: whitesmoke;
+--menu-margin: 2rem;
+}
+main{
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+}
+footer{
+    background-color: black;
+    height: 3rem;
+}
+
+/* Clase para centralizar */
+.centralizar{
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header y menu */
+.header{
+    display: table-cell;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/img/mountains-7ddde89.jpg);
+    background-size: cover;
+}
+.header-block h1{
+    font-size: 5rem;
+}
+
+/*Menu en header*/
+.menu-top{
+    position:absolute;
+    width: 100% ;
+    height: 6rem;
+    transition: all 1s ease;
+    z-index: 999;
+}
+.fixed{
+    background-color: whitesmoke;
+    position: fixed;
+    height: 4rem;
+    transition: all 1s ease;
+    margin-bottom: 2rem;
+    box-shadow: 0.25rem -0.25rem 1rem 0.05rem black;
+}
+.menu-top ul{
+    all: unset;
+    list-style: none;
+    display: inline-flex;
+    float: right;
+    margin: var(--menu-margin) 5rem auto auto;
+    align-items: center;
+    color: var(--menu-color);
+    transition: all 0.5s ease;
+}
+
+/* Elementos de menu con efecto generado con before */
+.btn-animado{
+    all: unset;
+    padding: 0 0.5rem 0.25rem 0.5rem;
+    position: relative;
+    width: auto;
+    overflow: hidden;
+    cursor: pointer;
+    align-items: center;
+    font-weight: bold;
+}
+.btn-animado::before{
+    content: "";
+    position: absolute;
+    height: 0.15rem;
+    width: 0;
+    background: var(--menu-color);
+    bottom: 0;
+    left: 50%;
+    transition: width .5s ease-in-out, left .5s ease-in-out, right .5s ease-in-out;
+}
+.btn-animado:hover::before{
+    width: 100%;
+    left: 0;
+}
+
+/* /////// */
+.header-block{
+    display: block;
+    position:relative;
+    margin-top: 15rem;
+}
+
+/* Logo en menu light y dark */
+.logo-menu-light{
+    position: relative;
+    margin: 1rem 0 auto 4rem;
+    float: left;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.logo-menu-dark{
+    position: relative;
+    margin: 1rem 0 auto 4rem;
+    float: left;
+    cursor: pointer;
+    display: none;
+    transition: all 1s ease;
+}
+
+/* Boton para scrollear */
+.button-block{
+    position: relative;
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button{
+    height: 1.5rem;
+    font-size: 0.8rem;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.button a:link{
+    text-decoration: none;
+    color: white;
+}
+.button a:visited{
+    color: white;
+}
+.button a::after{
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: -0.5rem;
+    left: 0;
+    border: 0.15rem solid white;
+    border-right: none;
+    transition: all 0.5s ease;
+}
+.button a::before{
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: -0.5rem;
+    right: 0;
+    border: 0.15rem solid white;
+    border-left: none;
+    transition: all 0.5s ease;
+}
+.button a:hover::before, .button a:hover::after{
+    width: 50%;
+}
+
+/*Primera parte de contenido*/
+.container h1{
+    margin: 0.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.divisor{
+    content: "";
+    height: 5rem;
+    width: 100%;
+}
+.subtitle{
+    width: 15rem;
+    position: relative;
+    color: grey;
+    text-transform: uppercase;
+}
+h4 span::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border-top: 0.1rem solid black;
+    width: 2rem;
+
+}
+
+/*Div con contenido de imagenes*/
+/*Animacion en forma de slider para div container*/
+@keyframes slider {
+    0%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(-30rem, 0, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
+
+}
+
+.contenido-imagenes{
+    position: relative;
+    width: 80%;
+}
+/*Flechas de direccion en div content*/
+.contenido-imagenes::after{
+    content: "<";
+    position: absolute;
+    align-items: center;
+    border-radius: 5px;
+    line-height: 3rem;
+    top: 50%;
+    left: 2.5%;
+    height: 3rem;
+    width: 3rem;
+    background-color: #db0018;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.contenido-imagenes::before{
+    content: ">";
+    position: absolute;
+    align-items: center;
+    border-radius: 5px;
+    line-height: 3rem;
+    top: 50%;
+    right: 2.5%;
+    height: 3rem;
+    width: 3rem;
+    background-color: #db0018;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.contenido-imagenes:hover::before{
+    opacity: 1;
+    transform: translatex(50%);
+}
+.contenido-imagenes:hover::after{
+    opacity: 1;
+    transform: translatex(-50%);
+}
+/*Before & After on click*/
+
+
+/*Contenedor de las imagenes*/
+.menu-imagen{
+    display: table-cell;
+}
+.menu-imagen img{
+    display: table-cell;
+    min-width: 15rem;
+    max-width: 100%;
+}
+.content{
+    position: relative;
+    overflow-x: hidden;
+}
+.content img{
+    animation: slider 40s linear infinite;
+=======
+/* Aplicando Google Font size */
+html{
+    font-family: 'Manrope', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+/* Variables */
+:root{
+--menu-color: whitesmoke;
+--menu-margin: 2rem;
+}
+main{
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+}
+footer{
+    background-color: black;
+    height: 3rem;
+}
+
+/* Clase para centralizar */
+.centralizar{
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header y menu */
+.header{
+    display: table-cell;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/assets/img/mountains-7ddde89.jpg);
+    background-size: cover;
+}
+.header-block h1{
+    font-size: 5rem;
+}
+
+/*Menu en header*/
+.menu-top{
+    position:absolute;
+    width: 100% ;
+    height: 6rem;
+    transition: all 1s ease;
+    z-index: 999;
+}
+.fixed{
+    background-color: whitesmoke;
+    position: fixed;
+    height: 4rem;
+    transition: all 1s ease;
+    margin-bottom: 2rem;
+    box-shadow: 0.25rem -0.25rem 1rem 0.05rem black;
+}
+.menu-top ul{
+    all: unset;
+    list-style: none;
+    display: inline-flex;
+    float: right;
+    margin: var(--menu-margin) 5rem auto auto;
+    align-items: center;
+    color: var(--menu-color);
+    transition: all 0.5s ease;
+}
+
+/* Elementos de menu con efecto generado con before */
+.btn-animado{
+    all: unset;
+    padding: 0 0.5rem 0.25rem 0.5rem;
+    position: relative;
+    width: auto;
+    overflow: hidden;
+    cursor: pointer;
+    align-items: center;
+    font-weight: bold;
+}
+.btn-animado::before{
+    content: "";
+    position: absolute;
+    height: 0.15rem;
+    width: 0;
+    background: var(--menu-color);
+    bottom: 0;
+    left: 50%;
+    transition: width .5s ease-in-out, left .5s ease-in-out, right .5s ease-in-out;
+}
+.btn-animado:hover::before{
+    width: 100%;
+    left: 0;
+}
+
+/* /////// */
+.header-block{
+    display: block;
+    position:relative;
+    margin-top: 15rem;
+}
+
+/* Logo en menu light y dark */
+.logo-menu-light{
+    position: relative;
+    margin: 1rem 0 auto 4rem;
+    float: left;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.logo-menu-dark{
+    position: relative;
+    margin: 1rem 0 auto 4rem;
+    float: left;
+    cursor: pointer;
+    display: none;
+    transition: all 1s ease;
+}
+
+/* Boton para scrollear */
+.button-block{
+    position: relative;
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button{
+    height: 1.5rem;
+    font-size: 0.8rem;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.button a:link{
+    text-decoration: none;
+    color: white;
+}
+.button a:visited{
+    color: white;
+}
+.button a::after{
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: -0.5rem;
+    left: 0;
+    border: 0.15rem solid white;
+    border-right: none;
+    transition: all 0.5s ease;
+}
+.button a::before{
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: -0.5rem;
+    right: 0;
+    border: 0.15rem solid white;
+    border-left: none;
+    transition: all 0.5s ease;
+}
+.button a:hover::before, .button a:hover::after{
+    width: 50%;
+}
+
+/*Primera parte de contenido*/
+.container h1{
+    margin: 0.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.divisor{
+    content: "";
+    height: 5rem;
+    width: 100%;
+}
+.subtitle{
+    width: 15rem;
+    position: relative;
+    color: grey;
+    text-transform: uppercase;
+}
+h4 span::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border-top: 0.1rem solid black;
+    width: 2rem;
+
+}
+
+/*Div con contenido de imagenes*/
+/*Animacion en forma de slider para div container*/
+@keyframes slider {
+    0%{
+        transform: translate3d(0, 0, 0);
+    }
+    50%{
+        transform: translate3d(-30rem, 0, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
+
+}
+
+.contenido-imagenes{
+    position: relative;
+    width: 80%;
+}
+/*Flechas de direccion en div content*/
+.contenido-imagenes::after{
+    content: "<";
+    position: absolute;
+    align-items: center;
+    border-radius: 5px;
+    line-height: 3rem;
+    top: 50%;
+    left: 2.5%;
+    height: 3rem;
+    width: 3rem;
+    background-color: #db0018;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.contenido-imagenes::before{
+    content: ">";
+    position: absolute;
+    align-items: center;
+    border-radius: 5px;
+    line-height: 3rem;
+    top: 50%;
+    right: 2.5%;
+    height: 3rem;
+    width: 3rem;
+    background-color: #db0018;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.contenido-imagenes:hover::before{
+    opacity: 1;
+    transform: translatex(50%);
+}
+.contenido-imagenes:hover::after{
+    opacity: 1;
+    transform: translatex(-50%);
+}
+/*Before & After on click*/
+
+
+/*Contenedor de las imagenes*/
+.menu-imagen{
+    display: table-cell;
+}
+.menu-imagen img{
+    display: table-cell;
+    min-width: 15rem;
+    max-width: 100%;
+}
+.content{
+    position: relative;
+    overflow-x: hidden;
+}
+.content img{
+    animation: slider 40s linear infinite;
+>>>>>>> 6837a76ab8ab673c7b788a8e9bccc692abb4ece0:Assets/css/style.css
+}
