@@ -261,6 +261,7 @@ h4 span::before{
 /*Contenedor de las imagenes*/
 .menu-imagen{
     display: table-cell;
+    cursor: pointer;
 }
 .menu-imagen img{
     display: table-cell;
