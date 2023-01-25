@@ -9,11 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="Assets/jscript/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <link rel="stylesheet" href="Assets/css/normalize.css">
     <link rel="stylesheet" href="Assets/css/style.css">
     <title>New project</title>
 </head>
 <body>
+    <!-- LOADER -->
+    <div class="centrado" id="onload">
+        <div class="lds-ring centralizado"><div></div><div></div><div></div><div></div></div>
+    </div>
     <!-- Comienzo de header -->
     <header class="header centralizar" id="header">
         <nav class="menu-top" id="menu-top">
@@ -34,6 +39,7 @@
             <div class="button-block">
                 <article class="button"><a href="#">Live demos</a></article>
             </div>
+            <div id="contador"></div>
         </div>
     </header>
      <!-- Fin de header -->
