@@ -34,3 +34,7 @@ window.addEventListener('scroll',function(){
         this.document.documentElement.style.setProperty('--menu-margin','2rem');
     }
 })
+
+window.onload = function(){
+    $(`#onload`).fadeOut();
+}
